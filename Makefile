@@ -32,5 +32,5 @@ ifeq (run, $(firstword $(MAKECMDGOALS)))
   COMMAND_ARGS := $(subst , , $(COMMAND_ARGS_INLINE))
   $(eval $(COMMAND_ARGS):;@: )
 endif
-run:
+run: ## Запустить приложение
 	$(DOCKER_COMPOSE) exec $(PHP_CONTAINER) php command.php -i $(wordlist 1, 1, $(COMMAND_ARGS)) -o $(wordlist 2, 2, $(COMMAND_ARGS))
