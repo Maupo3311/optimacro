@@ -18,6 +18,7 @@ class CommandTest extends Unit
         $outputFile = 'tests/output.json';
         $this->tester->runShellCommand("php command.php -i {$dataDirectory}/input.csv -o ${outputFile}", false);
         $this->tester->seeResultCodeIs(0);
+        // Не сравнивается 2 json файла напрямую, т.к при сравнении 2-х массивов информация об ошибке более читаемая
         $commandJson = json_decode(file_get_contents($this->getFilepath($outputFile)));
         $expectedJson = json_decode(file_get_contents($this->getFilepath($dataDirectory) . '/output.json'));
         $this->tester->assertEquals($expectedJson, $commandJson);
