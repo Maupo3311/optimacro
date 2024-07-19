@@ -17,8 +17,7 @@
     },
     "require-dev": {
         "codeception/codeception": "^5.1",
-        "codeception/module-phpbrowser": "*",
-        "codeception/module-asserts": "*",
+        "codeception/module-asserts": "3.0.0",
         "codeception/module-cli": "^2.0"
     },
     "scripts": {
